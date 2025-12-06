@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "307297168024",
+    "project_id": "gymapp-4c108",
+    "storage_bucket": "gymapp-4c108.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307297168024:android:1c255904ee824ea9b07eed",
+        "android_client_info": {
+          "package_name": "com.coursestore.course_store"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA25xHaeky5FaHP_N_gnC6E83m3Rdu1lGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307297168024:android:086510cefb0fb67eb07eed",
+        "android_client_info": {
+          "package_name": "com.example.meleapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA25xHaeky5FaHP_N_gnC6E83m3Rdu1lGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

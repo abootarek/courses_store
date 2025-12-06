@@ -11,6 +11,7 @@ import '../../features/admin/presentation/screens/manage_orders_screen.dart';
 import '../../features/user/presentation/screens/user_home_screen.dart';
 import '../../features/user/presentation/screens/course_details_screen.dart';
 import '../../features/shared/presentation/screens/settings_screen.dart';
+import '../../features/notification/presentation/screens/notifications_screen.dart';
 import '../../data/models/course_model.dart';
 import '../../data/models/lesson_model.dart';
 import '../../data/repositories/auth_repository.dart';
@@ -96,6 +97,11 @@ class AppRouter {
         path: '/settings',
         name: 'settings',
         builder: (context, state) => const SettingsScreen(),
+      ),
+      GoRoute(
+        path: '/notifications',
+        name: 'notifications',
+        builder: (context, state) => const NotificationsScreen(),
       ),
     ],
     redirect: (context, state) async {

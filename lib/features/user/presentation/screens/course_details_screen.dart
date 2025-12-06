@@ -1,4 +1,5 @@
 import 'package:chewie/chewie.dart';
+import 'package:course_store/core/constants/app_constants.dart';
 import 'package:course_store/data/models/lesson_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

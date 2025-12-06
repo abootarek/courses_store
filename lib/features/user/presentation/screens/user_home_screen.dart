@@ -1,3 +1,5 @@
+import 'package:course_store/features/notification/presentation/cubit/notification_cubit.dart';
+import 'package:course_store/features/notification/presentation/cubit/notification_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -11,13 +13,48 @@ class UserHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => getIt<HomeCubit>()..loadCourses(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => getIt<HomeCubit>()..loadCourses()),
+        BlocProvider(create: (_) => getIt<NotificationCubit>()..loadNotifications()),
+      ],
       child: Scaffold(
         appBar: AppBar(
           scrolledUnderElevation: 0,
           title: const Text('Course Store '),
           actions: [
+            BlocBuilder<NotificationCubit, NotificationState>(
+              builder: (context, state) {
+                bool hasUnread = false;
+                if (state is NotificationLoaded) {
+                  hasUnread = state.notifications.any((n) => !n.isRead);
+                }
+                return Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    IconButton(
+                      icon: const Icon(Icons.notifications),
+                      onPressed: () {
+                        context.push('/notifications');
+                      },
+                    ),
+                    if (hasUnread)
+                      Positioned(
+                        right: 12,
+                        top: 12,
+                        child: Container(
+                          width: 10,
+                          height: 10,
+                          decoration: const BoxDecoration(
+                            color: Colors.red,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                      ),
+                  ],
+                );
+              },
+            ),
             IconButton(
               icon: const Icon(Icons.settings),
               onPressed: () {
